@@ -20,7 +20,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.6" reference="macroMermaid" locale="">
+<xwikidoc version="1.6" reference="Macros.macroMermaid" locale="">
   <web>Macros</web>
   <name>macroMermaid</name>
   <language/>
@@ -36,27 +36,30 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>Draws diagrams using [Mermaid](https://mermaid.js.org/)
+  <content>
+Draws diagrams using [Mermaid](https://mermaid.js.org/)
 
-    = Example =
+== Example ==
 
-    {{code language="none"}}
-    {{mermaid}}
-    graph LR
-        A --- B
-        B--&gt;C[fa:fa-ban forbidden]
-        B--&gt;D(fa:fa-spinner);
-    {{/mermaid}}
-    {{/code}}
+{{code language="none"}}
+{{mermaid}}
+graph LR
+    A --- B
+    B--&gt;C[fa:fa-ban forbidden]
+    B--&gt;D(fa:fa-spinner);
+{{/mermaid}}
+{{/code}}
 
-    Generates:
+Generates:
 
-    {{mermaid}}
-    graph LR
-        A --- B
-        B--&gt;C[fa:fa-ban forbidden]
-        B--&gt;D(fa:fa-spinner);
-    {{/mermaid}}</content>
+{{mermaid}}
+graph LR
+    A --- B
+    B--&gt;C[fa:fa-ban forbidden]
+    B--&gt;D(fa:fa-spinner);
+{{/mermaid}}
+
+  </content>
   <object>
     <name>Macros.macroMermaid</name>
     <number>0</number>
@@ -71,6 +74,46 @@
       <defaultWeb/>
       <nameField/>
       <validationScript/>
+      <async_cached>
+        <defaultValue>0</defaultValue>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType/>
+        <name>async_cached</name>
+        <number>13</number>
+        <prettyName>Cached</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </async_cached>
+      <async_context>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>1</multiSelect>
+        <name>async_context</name>
+        <number>14</number>
+        <prettyName>Context elements</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator>, </separator>
+        <separators>|, </separators>
+        <size>5</size>
+        <unmodifiable>0</unmodifiable>
+        <values>action=Action|doc.reference=文档|doc.revision|icon.theme=Icon theme|locale=语言|rendering.defaultsyntax=Default syntax|rendering.restricted=Restricted|rendering.targetsyntax=Target syntax|request.base=请求基本URL|request.cookies|request.headers|request.parameters=请求参数|request.remoteAddr|request.session|request.url=请求URL|request.wiki=请求Wiki|sheet|user=用户|wiki=Wiki</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </async_context>
+      <async_enabled>
+        <defaultValue>0</defaultValue>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType/>
+        <name>async_enabled</name>
+        <number>12</number>
+        <prettyName>Asynchronous rendering</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </async_enabled>
       <code>
         <disabled>0</disabled>
         <editor>Text</editor>
@@ -96,6 +139,26 @@
         <unmodifiable>0</unmodifiable>
         <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
       </contentDescription>
+      <contentJavaType>
+        <cache>0</cache>
+        <defaultValue>Unknown</defaultValue>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <freeText>allowed</freeText>
+        <largeStorage>1</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>contentJavaType</name>
+        <number>8</number>
+        <picker>1</picker>
+        <prettyName>Macro content type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator>|</separator>
+        <separators>|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>Unknown|Wiki</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentJavaType>
       <contentType>
         <cache>0</cache>
         <disabled>0</disabled>
@@ -203,19 +266,31 @@
       </visibility>
     </class>
     <property>
+      <async_cached>0</async_cached>
+    </property>
+    <property>
+      <async_context/>
+    </property>
+    <property>
+      <async_enabled>0</async_enabled>
+    </property>
+    <property>
       <code>{{velocity}}
-{{html}}
-&lt;pre class="mermaid"&gt;
-$xcontext.macro.content
-&lt;/pre&gt;
-&lt;script type="module"&gt;
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/+esm';
-&lt;/script&gt;
-{{/html}}
-{{/velocity}}</code>
+        {{html}}
+        &lt;pre class="mermaid"&gt;
+        $xcontext.macro.content
+        &lt;/pre&gt;
+        &lt;script type="module"&gt;
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/+esm';
+        &lt;/script&gt;
+        {{/html}}
+        {{/velocity}}</code>
     </property>
     <property>
       <contentDescription>Please refer to https://mermaid.js.org/</contentDescription>
+    </property>
+    <property>
+      <contentJavaType/>
     </property>
     <property>
       <contentType>Mandatory</contentType>
