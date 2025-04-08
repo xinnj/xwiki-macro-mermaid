@@ -27,7 +27,7 @@
     </parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>macro-mermaid</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>Mermaid Macro</name>
     <packaging>xar</packaging>
     <description>Generate Diagrams using Mermaid</description>
